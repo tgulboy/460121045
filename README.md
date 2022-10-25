@@ -1,1 +1,1 @@
-![img](https://www.hizliresim.com/2tkakg0)
+![img](https://i.hizliresim.com/2tkakg0.png)
