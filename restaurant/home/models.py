@@ -24,7 +24,7 @@ class Reservation(models.Model):
           return self.fullname
 
 class Gallery(models.Model): 
-  image = models.CharField(max_length=255)
+  image = models.ImageField(upload_to='uploads/')
   Types = models.TextChoices('Types','Food Drink Restaurant Dinner Dessert')
   type = models.CharField(blank=True, choices=Types.choices, max_length=20)
 
@@ -39,8 +39,8 @@ class Subscription(models.Model):
 
 class Chef(models.Model): 
   fullname = models.CharField(max_length=255)
-  Types = models.TextChoices('Types','Head Chef, Pizza Chef, Grill Chef, Burger Chef')
-  type = models.CharField(blank=True, choices=Types.choices, max_length=20)  
+  #Types = models.TextChoices('Types','Head Chef, Pizza Chef, Grill Chef, Burger Chef')
+  #type = models.CharField(blank=True, choices=Types.choices, max_length=20)  
   photo = models.ImageField(upload_to='uploads/')
   facebook = models.CharField(max_length=255)
   twitter = models.CharField(max_length=255)
