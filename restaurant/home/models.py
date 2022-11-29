@@ -5,7 +5,7 @@ class Menu(models.Model):
   desc = models.CharField(max_length=255)
   Kinds = models.TextChoices('Kinds','Breakfast Meals Snacks Desserts Drinks')
   kind = models.CharField(blank=True, choices=Kinds.choices, max_length=10)
-  #img = models.ImageField(upload_to='uploads/')
+  img = models.ImageField(upload_to='images/', default='images/item.jpg')
   price = models.DecimalField(max_digits=8, decimal_places=2)
 
   def __str__(self):
@@ -24,7 +24,7 @@ class Reservation(models.Model):
           return self.fullname
 
 class Gallery(models.Model): 
-  image = models.ImageField(upload_to='uploads/')
+  img = models.ImageField(upload_to='images/', default='images/chef.png')
   Types = models.TextChoices('Types','Food Drink Restaurant Dinner Dessert')
   type = models.CharField(blank=True, choices=Types.choices, max_length=20)
 
@@ -39,9 +39,9 @@ class Subscription(models.Model):
 
 class Chef(models.Model): 
   fullname = models.CharField(max_length=255)
-  #Types = models.TextChoices('Types','Head Chef, Pizza Chef, Grill Chef, Burger Chef')
-  #type = models.CharField(blank=True, choices=Types.choices, max_length=20)  
-  photo = models.ImageField(upload_to='uploads/')
+  Types = models.TextChoices('Types','Head Pizza Grill Burger')
+  type = models.CharField(blank=True, choices=Types.choices, max_length=20)  
+  photo = models.ImageField(upload_to='images/', default='images/chef.jpg')
   facebook = models.CharField(max_length=255)
   twitter = models.CharField(max_length=255)
   linkedin = models.CharField(max_length=255)
@@ -52,7 +52,7 @@ class Chef(models.Model):
 class Blog(models.Model): 
   title = models.CharField(max_length=255)
   author = models.CharField(max_length=255)
-  banner = models.ImageField(upload_to='uploads/')
+  banner = models.ImageField(upload_to='images/', default='images/blog.jpg')
   release_date = models.DateField()
   content = models.TextField()
 
