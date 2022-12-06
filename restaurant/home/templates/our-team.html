@@ -16,142 +16,24 @@
                     </div>
                     <div class="mu-chef-content">
                         <ul class="mu-chef-nav">
+                            {% for x in chefs %}
                             <li>
                                 <div class="mu-single-chef">
                                     <figure class="mu-single-chef-img">
-                                        <img src="{% static 'assets/img/chef/chef-6.jpg' %}" alt="chef img">
+                                        <img src="{{ x.photo }}" alt="chef img">
                                     </figure>
                                     <div class="mu-single-chef-info">
-                                        <h4>Simon Jonson</h4>
-                                        <span>Head Chef</span>
+                                        <h4>{{ x.fullname }}</h4>
+                                        <span>{{ x.type }} Chef</span>
                                     </div>
                                     <div class="mu-single-chef-social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        <a href="{{ x.facebook }}"><i class="fa fa-facebook"></i></a>
+                                        <a href="{{ x.twitter }}"><i class="fa fa-twitter"></i></a>
+                                        <a href="{{ x.linkedin }}"><i class="fa fa-google-plus"></i></a>
                                     </div>
                                 </div>
                             </li>
-                            <li>
-                                <div class="mu-single-chef">
-                                    <figure class="mu-single-chef-img">
-                                        <img src="{% static 'assets/img/chef/chef-2.jpg' %}" alt="chef img">
-                                    </figure>
-                                    <div class="mu-single-chef-info">
-                                        <h4>Kelly Wenzel</h4>
-                                        <span>Pizza Chef</span>
-                                    </div>
-                                    <div class="mu-single-chef-social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="mu-single-chef">
-                                    <figure class="mu-single-chef-img">
-                                        <img src="{% static 'assets/img/chef/chef-3.jpg' %}" alt="chef img">
-                                    </figure>
-                                    <div class="mu-single-chef-info">
-                                        <h4>Greg Hong</h4>
-                                        <span>Grill Chef</span>
-                                    </div>
-                                    <div class="mu-single-chef-social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="mu-single-chef">
-                                    <figure class="mu-single-chef-img">
-                                        <img src="{% static 'assets/img/chef/chef-5.jpg' %}" alt="chef img">
-                                    </figure>
-                                    <div class="mu-single-chef-info">
-                                        <h4>Marty Fukuda</h4>
-                                        <span>Burger Chef</span>
-                                    </div>
-                                    <div class="mu-single-chef-social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="mu-single-chef">
-                                    <figure class="mu-single-chef-img">
-                                        <img src="{% static 'assets/img/chef/chef-6.jpg' %}" alt="chef img">
-                                    </figure>
-                                    <div class="mu-single-chef-info">
-                                        <h4>Simon Jonson</h4>
-                                        <span>Head Chef</span>
-                                    </div>
-                                    <div class="mu-single-chef-social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="mu-single-chef">
-                                    <figure class="mu-single-chef-img">
-                                        <img src="{% static 'assets/img/chef/chef-2.jpg' %}" alt="chef img">
-                                    </figure>
-                                    <div class="mu-single-chef-info">
-                                        <h4>Kelly Wenzel</h4>
-                                        <span>Pizza Chef</span>
-                                    </div>
-                                    <div class="mu-single-chef-social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="mu-single-chef">
-                                    <figure class="mu-single-chef-img">
-                                        <img src="{% static 'assets/img/chef/chef-3.jpg' %}" alt="chef img">
-                                    </figure>
-                                    <div class="mu-single-chef-info">
-                                        <h4>Greg Hong</h4>
-                                        <span>Grill Chef</span>
-                                    </div>
-                                    <div class="mu-single-chef-social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="mu-single-chef">
-                                    <figure class="mu-single-chef-img">
-                                        <img src="{% static 'assets/img/chef/chef-5.jpg' %}" alt="chef img">
-                                    </figure>
-                                    <div class="mu-single-chef-info">
-                                        <h4>Marty Fukuda</h4>
-                                        <span>Burger Chef</span>
-                                    </div>
-                                    <div class="mu-single-chef-social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>

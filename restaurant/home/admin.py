@@ -19,7 +19,7 @@ class Subscriptions(admin.ModelAdmin):
 
 @admin.register(Chef)
 class Chefs(admin.ModelAdmin):
-  list_display = ['fullname', 'photo', 'facebook', 'twitter', 'linkedin']
+  list_display = ['fullname', 'type', 'photo', 'facebook', 'twitter', 'linkedin']
 
 @admin.register(Blog)
 class Blogs(admin.ModelAdmin):

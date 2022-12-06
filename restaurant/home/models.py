@@ -29,7 +29,7 @@ class Gallery(models.Model):
   type = models.CharField(blank=True, choices=Types.choices, max_length=20)
 
   def __str__(self):
-          return str(self.image)
+          return str(self.img)
 
 class Subscription(models.Model): 
   email = models.EmailField(max_length=255)
@@ -42,9 +42,9 @@ class Chef(models.Model):
   Types = models.TextChoices('Types','Head Pizza Grill Burger')
   type = models.CharField(blank=True, choices=Types.choices, max_length=20)  
   photo = models.ImageField(upload_to='images/', default='images/chef.jpg')
-  facebook = models.CharField(max_length=255)
-  twitter = models.CharField(max_length=255)
-  linkedin = models.CharField(max_length=255)
+  facebook = models.CharField(max_length=255, null=True)
+  twitter = models.CharField(max_length=255, null=True)
+  linkedin = models.CharField(max_length=255, null=True)
 
   def __str__(self):
           return str(self.fullname)

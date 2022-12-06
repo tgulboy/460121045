@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import Menu
+from .models import Menu, Blog, Contact, Gallery, Chef, Reservation
 
 def index(request):
   template = loader.get_template('index.html')
@@ -20,16 +20,28 @@ def about_us(request):
   return HttpResponse(template.render())
 
 def blog(request):
+  blog = Blog.objects.all().values()
+  context = {
+    'blogs': blog,
+  }
   template = loader.get_template('blog.html')
-  return HttpResponse(template.render())
+  return HttpResponse(template.render(context, request))
 
 def contact(request):
+  contact = Contact.objects.all().values()
+  context = {
+    'contacts': contact,
+  }
   template = loader.get_template('contact.html')
-  return HttpResponse(template.render())
+  return HttpResponse(template.render(context, request))
 
 def gallery(request):
+  gallery = Gallery.objects.all().values()
+  context = {
+    'galleries': gallery,
+  }
   template = loader.get_template('gallery.html')
-  return HttpResponse(template.render())
+  return HttpResponse(template.render(context, request))
 
 def menu(request):
   menu = Menu.objects.all().values()
@@ -40,9 +52,17 @@ def menu(request):
   return HttpResponse(template.render(context, request))
 
 def our_team(request):
+  chef = Chef.objects.all().values()
+  context = {
+    'chefs': chef,
+  }
   template = loader.get_template('our-team.html')
-  return HttpResponse(template.render())
+  return HttpResponse(template.render(context, request))
 
 def reservation(request):
+  reservation = Reservation.objects.all().values()
+  context = {
+    'reservations': reservation,
+  }
   template = loader.get_template('reservation.html')
   return HttpResponse(template.render())
