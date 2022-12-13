@@ -1,15 +1,27 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from .models import Menu, Blog, Contact, Gallery, Chef, Reservation
+from django.contrib.auth import login, authenticate
+from home.forms import SignUpForm
 
 def index(request):
   template = loader.get_template('index.html')
   return HttpResponse(template.render())
 
 def signup(request):
-  template = loader.get_template('signup.html')
-  return HttpResponse(template.render())
+  if request.method == 'POST':
+    form = SignUpForm(request.POST)
+    if form.is_valid():
+      form.save()
+      username = form.cleaned_data.get('username')
+      raw_password = form.cleaned_data.get('password1')
+      user = authenticate(username=username, password=raw_password)
+      login(user)
+      return redirect('index')
+  else:
+    form = SignUpForm()
+  return render(request, 'signup.html', {'form': form})
 
 def login(request):
   template = loader.get_template('login.html')
