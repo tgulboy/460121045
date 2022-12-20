@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home.views import index, signup, login, about_us, blog, contact, gallery, menu, our_team, reservation
+from home.views import index, signup, login, about_us, blog, contact, gallery, menu, our_team, reservation, logout
 from django.conf import settings  
 from django.conf.urls.static import static  
 
@@ -23,6 +23,7 @@ urlpatterns = [
     path('', index, name="index"),
     path('signup/', signup, name="signup"),
     path('login/', login, name="login"),
+    path('logout/', logout, name="logout"),
     path('about-us/', about_us, name='about_us'),
     path('blog/', blog, name='blog'),
     path('contact/', contact, name='contact'),

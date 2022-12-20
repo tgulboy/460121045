@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from .models import Menu, Blog, Contact, Gallery, Chef, Reservation
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from home.forms import SignUpForm
 
 def index(request):
@@ -24,9 +24,20 @@ def signup(request):
   return render(request, 'signup.html', {'form': form})
 
 def login(request):
+  username = request.POST['username']
+  password = request.POST['password']
+  user = authenticate(request, username=username, password=password)
+  if user is not None:
+      login(request, user)
+  else:
+      return 'error message'
   template = loader.get_template('login.html')
   return HttpResponse(template.render())
 
+def logout(request):
+  logout(request)
+  return index
+      
 def about_us(request):
   template = loader.get_template('about-us.html')
   return HttpResponse(template.render())
