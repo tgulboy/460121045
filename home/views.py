@@ -10,6 +10,10 @@ from django.contrib.auth.decorators import login_required
 def index(request):
   return render(request, "index.html")
 
+@login_required
+def orders(request):
+  return render(request, "orders.html")
+
 def signup(request):
   if request.method == 'POST':
     form = SignUpForm(request.POST)

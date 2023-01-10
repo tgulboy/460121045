@@ -1,7 +1,7 @@
-import unicodedata
+#import unicodedata
 from django.db import models
-from django.contrib.contenttypes.models import ContentType
-from django.utils.translation import gettext_lazy as _
+#from django.contrib.contenttypes.models import ContentType
+#from django.utils.translation import gettext_lazy as _
 
 class Menu(models.Model):
   name = models.CharField(max_length=255)
@@ -71,7 +71,8 @@ class Contact(models.Model):
 
   def __str__(self):
     return str(self.name)
-
+'''
+sepet
 class Cart(models.Model):
   creation_date = models.DateTimeField(verbose_name=_('creation date'))
   checked_out = models.BooleanField(default=False, verbose_name=_('checked out'))
@@ -83,6 +84,7 @@ class Cart(models.Model):
 
   def __unicode__(self):
       return unicodedata(self.creation_date)
+
 
 class ItemManager(models.Manager):
   def get(self, *args, **kwargs):
@@ -129,4 +131,4 @@ def set_product(self, product):
   self.content_type = ContentType.objects.get_for_model(type(product))
   self.object_id = product.pk
 
-product = property(get_product, set_product)
+product = property(get_product, set_product)'''
